@@ -36,7 +36,7 @@
     "go",
     "iris go",
     "golang",
-    "iris golang",
+    "iris golang"
   ],
   "extensionDependencies": [
     "lukehoban.Go"
