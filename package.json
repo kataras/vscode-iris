@@ -2,7 +2,7 @@
   "name": "iris",
   "displayName": "Iris Web Framework (Go)",
   "version": "0.0.1",
-  "publisher": "kataras",
+  "publisher": "kataras2006",
   "description": "Iris Web Framework snippets for Visual Studio Code",
   "private": false,
   "author": {
@@ -37,9 +37,10 @@
     "iris go",
     "golang",
     "iris golang",
-    "web"
   ],
-  "extensionDependencies": ["lukehoban.Go"],
+  "extensionDependencies": [
+    "lukehoban.Go"
+  ],
   "dependencies": {
     "vscode": "^1.1.4"
   },
@@ -50,10 +51,12 @@
     "vscode": "^1.19.2"
   },
   "contributes": {
-    "snippets": [{
-      "language": "go",
-      "path": "./snippets/go.json"
-    }],
+    "snippets": [
+      {
+        "language": "go",
+        "path": "./snippets/go.json"
+      }
+    ],
     "configurationDefaults": {
       "[go]": {
         "editor.insertSpaces": false,
