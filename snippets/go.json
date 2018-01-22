@@ -79,7 +79,11 @@
 		"body": "app.Delete(\"/${1:path}\", func(ctx iris.Context) {\n\t$2\n})\n$3",
 		"description": "Snippet for the iris/core/router#Delete"
 	},
-
+	"iris hello world web app": {
+		"prefix": "helloweb",
+		"body": "package main\n\nimport (\n\t\"time\"\n\n\t\"github.com/kataras/iris\"\n)\n\nfunc greet(ctx iris.Context) {\n\tctx.Writef(\"Hello World! %s\", time.Now())\n}\n\nfunc main() {\n\tapp := iris.New()\n\tapp.Get(\"/\", greet)\n\tapp.Run(iris.Addr(\":8080\"))\n}",
+		"description": "Snippet for sample hello world iris webapp"
+	}
 	"single import": {
 		"prefix": "im",
 		"body": "import \"${1:package}\"",
@@ -285,9 +289,4 @@
 		"body": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$0\n}",
 		"description": "Snippet for method declaration"
 	},
-	"hello world web app": {
-		"prefix": "helloweb",
-		"body": "package main\n\nimport (\n\t\"fmt\"\n\t\"net/http\"\n\t\"time\"\n)\n\nfunc greet(w http.ResponseWriter, r *http.Request) {\n\tfmt.Fprintf(w, \"Hello World! %s\", time.Now())\n}\n\nfunc main() {\n\thttp.HandleFunc(\"/\", greet)\n\thttp.ListenAndServe(\":8080\", nil)\n}",
-		"description": "Snippet for sample hello world webapp"
-	}
 }
