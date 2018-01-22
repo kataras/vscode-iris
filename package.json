@@ -1,0 +1,64 @@
+{
+  "name": "iris",
+  "displayName": "Iris Web Framework (Go)",
+  "version": "0.0.1",
+  "publisher": "kataras",
+  "description": "Iris Web Framework snippets for Visual Studio Code",
+  "private": false,
+  "author": {
+    "name": "Gerasimos Maropoulos - kataras2006@hotmail.com"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/kataras/vscode-iris/issues",
+    "email": "kataras2006@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kataras/vscode-iris.git"
+  },
+  "homepage": "https://github.com/kataras/vscode-iris/blob/master/README.md",
+  "icon": "images/icon.png",
+  "categories": [
+    "Snippets",
+    "Extension Packs",
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#006bac",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onLanguage:go"
+  ],
+  "keywords": [
+    "iris",
+    "go",
+    "iris go",
+    "golang",
+    "iris golang",
+    "web"
+  ],
+  "extensionDependencies": ["lukehoban.Go"],
+  "dependencies": {
+    "vscode": "^1.1.4"
+  },
+  "devDependencies": {
+    "vscode": "^1.1.4"
+  },
+  "engines": {
+    "vscode": "^1.19.2"
+  },
+  "contributes": {
+    "snippets": [{
+      "language": "go",
+      "path": "./snippets/go.json"
+    }],
+    "configurationDefaults": {
+      "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
