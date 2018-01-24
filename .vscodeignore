@@ -4,3 +4,4 @@ node_modules/**/*
 package-lock.json
 src/**/*
 tsconfig.json
+iris-0.0.4.vsix
