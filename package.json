@@ -1,7 +1,7 @@
 {
   "name": "iris",
   "displayName": "Iris Web Framework (Go)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "kataras2006",
   "description": "Iris Web Framework snippets for Visual Studio Code",
   "private": false,
