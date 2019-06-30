@@ -1,14 +1,14 @@
 {
   "name": "iris",
   "displayName": "Iris Web Framework (Go)",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "publisher": "kataras2006",
   "description": "Iris Web Framework snippets for Visual Studio Code",
   "private": false,
   "author": {
     "name": "Gerasimos Maropoulos - kataras2006@hotmail.com"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kataras/vscode-iris/issues",
     "email": "kataras2006@hotmail.com"
@@ -39,7 +39,7 @@
     "iris golang"
   ],
   "extensionDependencies": [
-    "lukehoban.Go"
+    "ms-vscode.Go"
   ],
   "main": "./out/extension",
   "scripts": {
@@ -49,13 +49,10 @@
   },
   "devDependencies": {
     "typescript": "^2.0.3",
-    "vscode": "^1.1.4"
-  },
-  "dependencies": {
-    "vscode": "^1.1.4"
+    "vscode": "^1.1.33"
   },
   "engines": {
-    "vscode": "^1.19.2"
+    "vscode": "^1.25.0"
   },
   "contributes": {
     "snippets": [
