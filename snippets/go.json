@@ -1,7 +1,7 @@
 {
 	"iris hello world web app": {
 		"prefix": "helloweb",
-		"body": "package main\n\nimport (\n\t\"time\"\n\n\t\"github.com/kataras/iris\"\n)\n\nfunc greet(ctx iris.Context) {\n\tctx.Writef(\"Hello World! %s\", time.Now())\n}\n\nfunc main() {\n\tapp := iris.New()\n\tapp.Get(\"/\", greet)\n\tapp.Run(iris.Addr(\":8080\"))\n}",
+		"body": "package main\n\nimport (\n\t\"time\"\n\n\t\"github.com/kataras/iris/v12\"\n)\n\nfunc greet(ctx iris.Context) {\n\tctx.Writef(\"Hello World! %s\", time.Now())\n}\n\nfunc main() {\n\tapp := iris.New()\n\tapp.Get(\"/\", greet)\n\tapp.Run(iris.Addr(\":8080\"))\n}",
 		"description": "Snippet for sample hello world iris webapp"
 	},
 	"iris#New": {
@@ -17,37 +17,25 @@
 		],
 		"description": "Snippet for the iris/sessions#New"
 	},
-	"iris/websocket#New": {
-		"prefix": "newwebsockets",
-		"body": ["ws := websocket.New(websocket.Config{",
-			"\tReadBufferSize:  2048,",
-			"\tWriteBufferSize: 2048,",
-			"})",
-			"app.Any(\"/iris-ws.js\", websocket.ClientHandler())",
-			"app.Get(\"/${1:endpoint}\", func(ctx iris.Context) {",
-			"\tconn := ws.Upgrade(ctx)",
-			"\tconn.OnDisconnect(func() {})",
-			"\tconn.On(\"${2:event}\", func() {",
-			"\t\t$3",
-			"\t})",
-			"})\n$4"
-		],
-		"description": "Snippet for the iris/websocket#New"
-	},
 	"iris#RegisterView": {
 		"prefix": "regview",
 		"body": "app.RegisterView(iris.${1:HTML}(\"./${2:views}\", \".${3:html}\"))\n$4",
 		"description": "Snippet for the iris#RegisterView"
 	},
-	"iris/core/router#StaticWeb": {
-		"prefix": "staticweb",
-		"body": "app.StaticWeb(\"/${1:assets}\", \"./${2:public}\")\n$3",
-		"description": "Snippet for the iris/router#StaticWeb"
+	"iris/core/router#HandleDir": {
+		"prefix": "handledir",
+		"body": "app.HandleDir(\"/${1:path}\", \"./${2:directory}\")\n$3",
+		"description": "Snippet for the iris/core/router#HandleDir"
 	},
-	"iris/core/router#StaticEmbedded": {
+	"iris/core/router#StaticWeb_Deprecated": {
+		"prefix": "staticweb",
+		"body": "app.HandleDir(\"/${1:path}\", \"./${2:directory}\")\n$3",
+		"description": "Snippet for the iris/core/router#HandleDir"
+	},
+	"iris/core/router#StaticEmbedded_Deprecated": {
 		"prefix": "staticembedded",
-		"body": "app.StaticEmbedded(\"/${1:assets}\", \"./${2:public}\", Asset, AssetNames)\n$3",
-		"description": "Snippet for the iris/core/router#StaticEmbedded"
+		"body": "app.HandleDir(\"/${1:path}\", \"./${2:directory}\", iris.DirOptions{ Asset: Asset, AssetNames: AssetNames})\n$3",
+		"description": "Snippet for the iris/core/router#HandleDir for embedded files"
 	},
 	"iris/core/router#Favicon": {
 		"prefix": "fav",

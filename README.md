@@ -16,7 +16,7 @@ package main
 import (
     "time"
 
-    "github.com/kataras/iris"
+    "github.com/kataras/iris/v12"
 )
 
 func greet(ctx iris.Context) {
@@ -47,39 +47,22 @@ sessionsManager := sessions.New(sessions.Config{
 })
 ```
 
-### newwebsockets
-
-```go
-ws := websocket.New(websocket.Config{
-    ReadBufferSize:  2048,
-    WriteBufferSize: 2048,
-})
-app.Any("/iris-ws.js", websocket.ClientHandler())
-app.Get("/endpoint", func(ctx iris.Context) {
-    conn := ws.Upgrade(ctx)
-    conn.OnDisconnect(func() {})
-    conn.On("event", func() {
-
-    })
-})
-```
-
 ### regview
 
 ```go
 app.RegisterView(iris.HTML("./views", ".html"))
 ```
 
-### staticweb
+### handledir
 
 ```go
-app.StaticWeb("/assets", "./public")
+app.HandleDir("/path", "./directory")
 ```
 
 ### staticembedded
 
 ```go
-app.StaticEmbedded("/assets", "./public", Asset, AssetNames)
+app.HandleDir("/path", "./directory", iris.DirOptions{Asset: Asset, AssetNames: AssetNames})
 ```
 
 ### fav
