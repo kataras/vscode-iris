@@ -1,6 +1,7 @@
 .vscode/**/*
 .gitignore
 node_modules/**/*
+_examples/**/*
 package-lock.json
 src/**/*
 tsconfig.json
