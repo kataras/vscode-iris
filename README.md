@@ -4,7 +4,7 @@ For the moment, the Iris extension provides some very useful code snippets to re
 
 Snippets section contains the documentation for each snippet(word that is auto-completed by the Visual Studio Code's editor when you type its prefix, with the key `<tab>` you can actually apply the code that is referring to the snippet and by pressing `<tab>` again you can change the _default values_ for each code snippet's body).
 
-The Iris extension will install the [vscode-go](https://github.com/Microsoft/vscode-go) extension automatically for you, if it is not there already.
+The Iris extension will install the [vscode-go](https://github.com/golang/vscode-go) extension automatically for you, if it is not there already.
 
 ## Snippets
 
