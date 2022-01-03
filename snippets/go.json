@@ -170,35 +170,83 @@
 			"body": "${1:w} http.ResponseWriter, ${2:r} *http.Request",
 			"description": "Snippet for http Response"
 		},
-		"http.HandleFunc": {
+		"iris.Handler": {
 			"prefix": "hf",
-			"body": "${1:http}.HandleFunc(\"${2:/}\", ${3:handler})",
-			"description": "Snippet for http.HandleFunc()"
+			"body": "func $1(ctx iris.Context) {\n\t$0\n}",
+			"description": "Snippet for iris handler declaration"
 		},
-		"http handler declaration": {
+		"iris handler declaration": {
 			"prefix": "hand",
-			"body": "func $1(${2:w} http.ResponseWriter, ${3:r} *http.Request) {\n\t$0\n}",
-			"description": "Snippet for http handler declaration"
+			"body": "func $1(${2:ctx} iris.Context) {\n\t$0\n}",
+			"description": "Snippet for iris handler declaration"
 		},
-		"http.Redirect": {
+		"iris.Context.Redirect": {
 			"prefix": "rd",
-			"body": "http.Redirect(${1:w}, ${2:r}, \"${3:/}\", ${4:http.StatusFound})",
-			"description": "Snippet for http.Redirect()"
+			"body": "ctx.Redirect(\"${1:/}\", ${2:iris.StatusFound})",
+			"description": "Snippet for Context.Redirect()"
 		},
-		"http.Error": {
+		"iris.Context.Error": {
 			"prefix": "herr",
-			"body": "http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})",
-			"description": "Snippet for http.Error()"
+			"body": "ctx.StopWithError(${1:iris.StatusInternalServerError}, ${2:err}.Error())",
+			"description": "Snippet for Context.StopWithError()"
 		},
-		"http.ListenAndServe": {
+		"iris.Listen": {
 			"prefix": "las",
-			"body": "http.ListenAndServe(\"${1::8080}\", ${2:nil})",
-			"description": "Snippet for http.ListenAndServe"
+			"body": "http.Listen(\"${1::8080}\")",
+			"description": "Snippet for iris.Listen"
 		},
-		"http.Serve": {
+		"iris.Run": {
 			"prefix": "sv",
-			"body": "http.Serve(\"${1::8080}\", ${2:nil})",
-			"description": "Snippet for http.Serve"
+			"body": "app.Run(iris.Addr(\"${1::8080}\"))",
+			"description": "Snippet for iris.Run"
+		},
+		"iris#New": {
+			"prefix": "newapp",
+			"body": "app := iris.New()\n$1\n\napp.Run(iris.Addr(\"${2::8080}\"))",
+			"description": "Snippet for the iris#New"
+		},
+		"iris/sessions#New": {
+			"prefix": "newsessions",
+			"body": ["sessionsManager := sessions.New(sessions.Config{",
+				"\tCookie: \"${1:cookieName}\",",
+				"})\n$2"
+			],
+			"description": "Snippet for the iris/sessions#New"
+		},
+		"iris#RegisterView": {
+			"prefix": "regview",
+			"body": "app.RegisterView(iris.${1:HTML}(\"./${2:views}\", \".${3:html}\"))\n$4",
+			"description": "Snippet for the iris#RegisterView"
+		},
+		"iris/core/router#HandleDir": {
+			"prefix": "handledir",
+			"body": "app.HandleDir(\"/${1:path}\", \"./${2:directory}\")\n$3",
+			"description": "Snippet for the iris/core/router#HandleDir"
+		},
+		"iris/core/router#Favicon": {
+			"prefix": "fav",
+			"body": "app.Favicon(\"./${1:public/favicon.ico}\")\n$2",
+			"description": "Snippet for the iris/core/router#Favicon"
+		},
+		"iris/core/router#Get": {
+			"prefix": "get",
+			"body": "app.Get(\"/${1:path}\", func(ctx iris.Context) {\n\t$2\n})\n$3",
+			"description": "Snippet for the iris/core/router#Get"
+		},
+		"iris/core/router#Post": {
+			"prefix": "post",
+			"body": "app.Post(\"/${1:path}\", func(ctx iris.Context) {\n\t$2\n})\n$3",
+			"description": "Snippet for the iris/core/router#Post"
+		},
+		"iris/core/router#Put": {
+			"prefix": "put",
+			"body": "app.Put(\"/${1:path}\", func(ctx iris.Context) {\n\t$2\n})\n$3",
+			"description": "Snippet for the iris/core/router#Put"
+		},
+		"iris/core/router#Delete": {
+			"prefix": "delete",
+			"body": "app.Delete(\"/${1:path}\", func(ctx iris.Context) {\n\t$2\n})\n$3",
+			"description": "Snippet for the iris/core/router#Delete"
 		},
 		"goroutine anonymous function": {
 			"prefix": "go",
