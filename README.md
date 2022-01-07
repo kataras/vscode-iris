@@ -8,6 +8,30 @@ The Iris extension will install the [vscode-go](https://github.com/golang/vscode
 
 ## Snippets
 
+### pc
+
+```go
+app.PartyConfigure("/", new(users.API))
+
+```
+
+### api
+
+```go
+package api
+
+import (
+	"github.com/kataras/iris/v12"
+)
+
+type API struct {
+}
+
+func (api *API) Configure(r iris.Party) {
+	
+}
+```
+
 ### helloweb
 
 ```go

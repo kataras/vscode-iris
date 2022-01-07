@@ -327,6 +327,30 @@
 				""
 			]
 		},
+		"party controller": {
+			"prefix": "api",
+			"body": [
+				"package ${1:api}",
+				"",
+				"import (",
+				"\t\"github.com/kataras/iris/v12\"",
+				")",
+				"",
+				"type ${2:API} struct {",
+				"}",
+				"",
+				"func (api *${2:API}) Configure(r iris.Party) {",
+				"\t",
+				"}",
+				""
+			],
+			"description": "Snippet for an Iris Party Controller"
+		},
+		"register party controller": {
+			"prefix": "pc",
+			"body": ["$1.PartyConfigure(\"/$2\", new($3))",""],
+			"description": "Snippet to register an Iris Party Controller"
+		},
 		"sort implementation": {
 			"prefix": "sort",
 			"body": "type ${1:SortBy} []${2:Type}\n\nfunc (a $1) Len() int           { return len(a) }\nfunc (a $1) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }\nfunc (a $1) Less(i, j int) bool { ${3:return a[i] < a[j]} }",
